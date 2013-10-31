@@ -1,0 +1,66 @@
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'utf-8'}
+    %link{:rel => 'stylesheet', :href=>'public/css/custom.css', :type=>'text/css'}
+    %title RPS con Haml.
+  %body
+    
+    #header.container_12
+      .grid_12
+        %h1 Rock, Paper & Scissors
+    
+    
+    - if !player_throw
+
+      #header.container_12
+        .grid_12    
+    
+          %h2 You vs Computer
+
+          Choose one:
+          %img{:src => 'public/images/animado.gif'}
+          %p    
+            %a{:href => '?choice=rock'} Rock
+            %a{:href => '?choice=paper'} Paper
+            %a{:href => '?choice=scissors'} Scissors            
+                        
+    - else
+      %h2
+      
+      #result.container_12
+
+
+        .grid_2      
+          .figure3
+            = answer
+          
+        .grid_2
+          = resultado
+        
+        .grid_2    
+          %atras
+            %a{:href=>'/'}
+              %img{:src=> 'public/images/atras.gif'}  
+    
+    %h4
+      Ganadas
+      = ganadas
+
+    %h4
+      Perdidas
+      = perdidas
+      
+    %h4
+      Empates
+      = empates
+      
+    %h4
+      Total jugadas
+      = jugadas
+      
+      
+      
+    #footer.container_12
+      .grid_12
+        %h5 ETSII - Universidad de La Laguna - 2013
